@@ -17,7 +17,7 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-ffmpeg
     --enable-ffprobe
     --disable-network
-    --disable-muxers
+    # --disable-muxers
     --disable-demuxers
     --disable-zlib
     --disable-lzma
@@ -25,7 +25,6 @@ FFMPEG_CONFIGURE_FLAGS=(
     --disable-iconv
     --disable-libxcb
     --disable-bsfs
-    --disable-filters
     --disable-parsers
     --disable-indevs
     --disable-outdevs
@@ -44,10 +43,13 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-filter=null
     --enable-filter=setpts
     --enable-filter=trim
+    --enable-filter=aresample
 
     --disable-protocols
     --enable-protocol=file
     --enable-protocol=pipe
+
+    --enable-muxer=segment
 
     --enable-demuxer=image2
     --enable-demuxer=aac
@@ -94,6 +96,8 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-demuxer=wv
     --enable-demuxer=xwma
     --enable-demuxer=dsf
+
+    --enable-encoder=pcm_s16le
 
     --enable-decoder=aac
     --enable-decoder=aac_latm
